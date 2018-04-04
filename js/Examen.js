@@ -10,7 +10,7 @@ window.onload= function(){
           } else {
           }
         }
-        xhttp.open('GET', 'https://rawgit.com/Ulisesuarez/TESTGO/master/ignorantia/src/assets/preguntas.xml', true)
+        xhttp.open('GET', 'https://rawgit.com/cuencaLZ/Examen-autocorrecion/master/Examen.xml', true)
         xhttp.send()
       }
 
