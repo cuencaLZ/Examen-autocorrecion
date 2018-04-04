@@ -77,6 +77,6 @@
 -	  			<option type="radio" value="1">La Bella y la Bestia</option>	
 -				<option type="radio" value="2">Apocalipsis Now</option>	
 -				<option type="radio" value="3">Matrix</option>	
--			<answer>3</answer>	
+-				<answer>3</answer>	
 -		</question>
 	</questions>
