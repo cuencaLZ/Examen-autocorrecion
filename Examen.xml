@@ -55,7 +55,7 @@
 		<question id="pre007">
 			<type>input</type>
 			<text>Que famosa saga de ciencia fición tiene como protagonistas una nave espacial, su capitan y la amistad de este con su 1ºoficial.</text>
-  		Titulo:<option type="text" name="titulo" value="Nombre"></option>
+  		<option type="text" name="titulo" value="Nombre"></option>
   		</question>
   		<question id="pre008">
   		<type>input</type>
@@ -69,7 +69,7 @@
 		<question id="pre009">
 		<type>input</type>
 		<text>En que año se estreno la primera pelicula con sonido?</text>
-  		Año:<option type="number" value="año"></option>
+  		<option type="number" value="año"></option>
   		</question>
   		<question id="pre010">
   		<type>input</type>
@@ -77,7 +77,6 @@
 	  			<option type="radio" value="1">La Bella y la Bestia</option>
 				<option type="radio" value="2">Apocalipsis Now</option>
 				<option type="radio" value="3">Matrix</option>
-				<option type="radio" value="4">El Motorista Fantasma</option>
 			<answer>3</answer>
 		</question>
 	</questions>
