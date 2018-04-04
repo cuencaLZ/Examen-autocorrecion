@@ -72,11 +72,11 @@
   		<option type="number" value="año"></option>
   		</question>
 		<question id="pre010">	
--  		<type>input</type>	
--  		<text>Saga que tiene como argumento la lucha entre la raza humana y las maquinas?</text>	
--	  			<option type="radio" value="1">La Bella y la Bestia</option>	
--				<option type="radio" value="2">Apocalipsis Now</option>	
--				<option type="radio" value="3">Matrix</option>	
--				<answer>3</answer>	
--		</question>
+		<type>input</type>	
+  		<text>Saga que tiene como argumento la lucha entre la raza humana y las maquinas?</text>	
+	  			<option type="radio" value="1">La Bella y la Bestia</option>	
+				<option type="radio" value="2">Apocalipsis Now</option>	
+				<option type="radio" value="3">Matrix</option>	
+				<answer>3</answer>	
+		</question>
 	</questions>
