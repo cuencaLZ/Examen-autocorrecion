@@ -1,0 +1,66 @@
+body{
+	background-image: url(http://www.telemundo.com/sites/nbcutelemundo/files/styles/article_cover_image/public/universidad-de-harvard.jpg?itok=9r7E8oPv);
+	background-size: cover;
+}
+div.uni { 	
+    
+	width: 154px;
+  	height: 160px;
+   	background: url("../img/icono.jpg") ;
+	}
+div.icono{
+	float:right;
+}
+h1{
+	text-align: center
+
+}
+.Menu2 {
+	margin-left: 8%;
+    list-style-type: none;
+
+	width: 80%;
+	padding: 0;
+    overflow: hidden;
+    background-color:#582a03;
+}
+.Menu ul {
+    list-style-type: none;
+	margin: 0.5%;
+	padding: 0;
+    overflow: hidden;
+    background-color: #ba945a;
+}
+
+.Menu li {
+	float: left;
+	margin-left: 12%;
+}
+
+.Menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.Menu li a:hover{
+    background-color: rgb(46, 62, 209);
+}
+.active {
+	background-color: rgb(48, 56, 48);
+	color: red;
+}
+main {
+	text-align: center;
+	margin-top: 6%;
+}
+section{
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 15%;
+	background: rgb(220, 69, 250);
+	text-align: justify;
+	border: 3px solid black;
+	padding: 3px;
+}

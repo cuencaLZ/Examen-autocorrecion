@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<questions>
+		<question id="pre001">
+			<type>input</type>
+			<text>Que pelicula dio inicio a una saga que tenia como protagonista a un luchador de boxeo italoestadounidense?</text>
+			<option type="radio" value="1">El Club de la Lucha</option>
+			<option type="radio" value="2">Karate Kid</option>
+			<option type="radio" value="3">Rocky</option>
+			<option type="radio" value="4">Rompiendo las Reglas</option>
+			<answer>3</answer>
+		</question>
+		<question id="pre002">
+		<type>date</type>
+		<text>En que año se estreno la primera pelicula de la famosa saga de Jurassic Park?</text>
+                    <option type="date" min="1980-01-02" max="2018-01-02"></option>
+        </question>
+        <question id="pre003">
+        <type>input</type>
+        <text>Selecciona de las opciones siguientes las que corresponden a conocidas frases de la pelicula Casablanca</text>
+        <option type="checkbox" value="1">Siempre nos quedara Paris</option>
+		<option type="checkbox" value="2">Tocala, Sam</option>
+		<option type="checkbox" value="3"> Tocala otra vez, Sam.</option>
+		<option type="checkbox" value="3">Si llegara a pensar en ti, probablemente sí</option>
+		</question>
+		<question id="pre004">
+			<type>input</type>
+			<text>Cual esta considerada la pelicula con mas recaudación de la historia?</text>
+				<option type="radio" value="1">Titanic</option>
+				<option type="radio" value="2">Star Wars Epidosio VII</option>
+				<option type="radio" value="3">Avatar</option>
+				<option type="radio" value="4">Apocalipsis Now</option>
+				<answer>3</answer>
+		</question>
+		<question id="pre005">
+			<type>select</type>
+			<text>Cual de estos personajes de pelicula esta interpretado por Bruce Willis?</text>
+				<option value="1">Luke Skywalker</option>
+			    <option value="2">Henry Walton Jones Jr.</option>
+			    <option value="3">John Connor</option>
+			    <option value="4">John McClane</option>
+			    <answer>4</answer>
+		</question>
+		<question id="pre006">
+			<type>select</type>
+			<text>Selecciona la pelicula Belica considerada como una pelicula de culto.</text>
+			<select name="cars" size="3">
+			  <option value="1">Los 7 Samurais</option>
+			  <option value="2">Salvando al Soldado Ryan</option>
+			  <option value="3">Apocalipsis Now</option>
+			  <option value="4">La Chaqueta Metalica</option>
+			  	</select>
+			  <answer>3</answer>
+		
+		</question>
+		<question id="pre007">
+			<type>input</type>
+			<text>Que famosa saga de ciencia fición tiene como protagonistas una nave espacial, su capitan y la amistad de este con su 1ºoficial.</text>
+  		Titulo:<option type="text" name="titulo" value="Nombre"></option>
+  		</question>
+  		<question id="pre008">
+  		<type>input</type>
+  		<text>En que pelicula de la famosa saga Regreso al Futuro el protagonista va realmente al futuro.</text>
+  				<option type="radio" value="1">Regreso al Futuro</option>
+				<option type="radio" value="2">Regreso al Futuro II</option>
+				<option type="radio" value="3">Regreso al Futuro III</option>
+				<option type="radio" value="4">Ninguna</option>
+				<answer>2</answer>
+		</question>
+		<question id="pre009">
+		<type>input</type>
+		<text>En que año se estreno la primera pelicula con sonido?</text>
+  		Año:<option type="number" value="año"></option>
+  		</question>
+  		<question id="pre010">
+  		<type>input</type>
+  		<text>Saga que tiene como argumento la lucha entre la raza humana y las maquinas?.</text>
+	  			<option type="radio" value="1">La Bella y la Bestia</option>
+				<option type="radio" value="2">Apocalipsis Now</option>
+				<option type="radio" value="3">Matrix</option>
+				</option type="radio" value="4">El Motorista Fantasma</option>
+			<answer>3</answer>
+		</question>
+	</questions>
