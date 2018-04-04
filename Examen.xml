@@ -77,7 +77,7 @@
 	  			<option type="radio" value="1">La Bella y la Bestia</option>
 				<option type="radio" value="2">Apocalipsis Now</option>
 				<option type="radio" value="3">Matrix</option>
-				</option type="radio" value="4">El Motorista Fantasma</option>
+				<option type="radio" value="4">El Motorista Fantasma</option>
 			<answer>3</answer>
 		</question>
 	</questions>
