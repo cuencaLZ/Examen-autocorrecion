@@ -14,7 +14,7 @@ function parseXml (){
             console.log("esta todo fatal")
           }
         }
-        xhttp.open('GET', 'https://rawgit.com/cuencaLZ/Examen-autocorrecion/master/Examen.xml', true)
+        xhttp.open('GET', 'https://rawgit.com/cuencaLZ/Examen-autocorrecion/master/rato.xml', true)
         xhttp.send()
 
       };
