@@ -24,7 +24,7 @@ function gestionarXml(xmldoc){
   var Contenedor= document.getElementById("exam")
   var enunciado = document.createElement("enunciado")
   var preguntas =xmldoc.children[0].childNodes;
-    for (i=0;i<4;i++){
+    for (i=0;i<27;i++){
     var span = document.createElement("SPAN")
     var Contenedor= document.getElementById("exam")
     var typopregunta=  document.createElement(xmldoc.getElementsByTagName("question") [0].childNodes[1].innerHTML)

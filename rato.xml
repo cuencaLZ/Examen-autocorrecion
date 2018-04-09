@@ -10,7 +10,7 @@
 			<answer>3</answer>
 		</question>
 		<question id="pre002">
-		<type>date</type>
+		<type>input</type>
 		<text>En que año se estreno la primera pelicula de la famosa saga de Jurassic Park?</text>
                     <option type="date" min="1980-01-02" max="2018-01-02"></option>
         </question>
