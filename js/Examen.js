@@ -11,20 +11,42 @@ function parseXml (){
             gestionarXml(this.responseXML)
           
           } else {
-            console.log("esta todo fatal")
           }
         }
         xhttp.open('GET', 'https://rawgit.com/cuencaLZ/Examen-autocorrecion/master/rato.xml', true)
+
         xhttp.send()
 
       };
 
 function gestionarXml(xmldoc){
-  console.log(xmldoc);
-  var Contenedor= document.getElementById("exam")
-  var enunciado = document.createElement("enunciado")
-  var preguntas =xmldoc.children[0].childNodes;
-    for (i=0;i<27;i++){
+  var Contenedor= document.getElementById("exam");
+  var enunciado = document.createElement("enunciado");
+  enunciado.innerHTML = xmldoc.getElementsByTagName("text")[0].innerHTML
+  
+  var preguntas = xmldoc.childNodes;
+  preguntas = preguntas[0].children;
+  pregunta = ""
+  for (i=0; i<preguntas.length;i++) {
+    idPregunta = preguntas[i].getAttribute("id");  
+     Contenedor.append(preguntas[i].getElementsByTagName('text')[0].innerHTML);
+   
+      for (j=0; j < preguntas[i].getElementsByTagName('option').length ; j++){
+        typopregunta = document.createElement(xmldoc.getElementsByTagName("question")[i].childNodes[1].innerHTML);
+        typopregunta.setAttribute("type", preguntas[i].getElementsByTagName('option')[j].getAttribute("type"));
+        typopregunta.setAttribute("name", idPregunta);
+
+        var span = document.createElement("SPAN");
+        span.innerHTML = preguntas[i].getElementsByTagName('option')[j].innerHTML
+        Contenedor.appendChild(document.createElement("br"))
+        Contenedor.appendChild(typopregunta)
+        Contenedor.appendChild(span)
+      }
+      
+      Contenedor.appendChild(document.createElement("br"))
+  }
+  /*Contenedor.appendChild(enunciado)
+  for (i=0;i<4;i++){
     var span = document.createElement("SPAN")
     var Contenedor= document.getElementById("exam")
     var typopregunta=  document.createElement(xmldoc.getElementsByTagName("question") [0].childNodes[1].innerHTML)
@@ -33,11 +55,8 @@ function gestionarXml(xmldoc){
   Contenedor.appendChild(document.createElement("br"))
   Contenedor.appendChild(typopregunta)
   Contenedor.appendChild(span)
-    }
-  
-  console.log(xmldoc.getElementsByTagName("question") [0].childNodes[1])
-  console.log(xmldoc.getElementsByTagName("option")[0].getAttribute("type"))
-  console.log(document.createElement(xmldoc.getElementsByTagName("question") [0].childNodes[2].innerHTML))
+
+  }*/
 }
 
 
