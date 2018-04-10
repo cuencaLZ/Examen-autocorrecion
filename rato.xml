@@ -67,6 +67,6 @@
 		<question id="pre009">
 		<type>input</type>
 		<text>En que año se estreno la primera pelicula con sonido?</text>
-  		<option type="number" value="año"></option>
+  		<option type="number" value="año" min="1900" max="1950"></option>
   		</question>
 	</questions>
