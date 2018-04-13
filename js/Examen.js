@@ -30,19 +30,32 @@ function gestionarXml(xmldoc){
   for (i=0; i<preguntas.length;i++) {
     idPregunta = preguntas[i].getAttribute("id");  
      Contenedor.append(preguntas[i].getElementsByTagName('text')[0].innerHTML);
-   
+     if ("select" != xmldoc.getElementsByTagName("type")[i].innerHTML){
       for (j=0; j < preguntas[i].getElementsByTagName('option').length ; j++){
         typopregunta = document.createElement(xmldoc.getElementsByTagName("question")[i].childNodes[1].innerHTML);
+        typopregunta.setAttribute("value",preguntas[i].getElementsByTagName('option')[j].getAttribute("value"));
         typopregunta.setAttribute("type", preguntas[i].getElementsByTagName('option')[j].getAttribute("type"));
         typopregunta.setAttribute("name", idPregunta);
-
         var span = document.createElement("SPAN");
         span.innerHTML = preguntas[i].getElementsByTagName('option')[j].innerHTML
         Contenedor.appendChild(document.createElement("br"))
         Contenedor.appendChild(typopregunta)
         Contenedor.appendChild(span)
       }
-      
+      }
+      else {
+         console.log("select tu madre")
+        var select = document.createElement("select")
+        for (t=0; t < preguntas[i].getElementsByTagName('option').length ; t++){
+        var option = document.createElement('option')
+       option.innerHTML = preguntas[i].getElementsByTagName('option')[t].innerHTML
+         select.appendChild(option)
+       
+      }
+      Contenedor.appendChild(document.createElement("br"))
+      Contenedor.appendChild(select)
+      Contenedor.appendChild(document.createElement("br"))
+      }
       Contenedor.appendChild(document.createElement("br"))
   }
   /*Contenedor.appendChild(enunciado)

@@ -34,10 +34,10 @@
 		<question id="pre005">
 			<type>select</type>
 			<text>Cual de estos personajes de pelicula esta interpretado por Bruce Willis?</text>
-				<option value="1">Luke Skywalker</option>
-			    <option value="2">Henry Walton Jones Jr.</option>
-			    <option value="3">John Connor</option>
-			    <option value="4">John McClane</option>
+				<option  value="1">Luke Skywalker</option>
+			    <option  value="2">Henry Walton Jones Jr.</option>
+			    <option  value="3">John Connor</option>
+			    <option  value="4">John McClane</option>
 			    <answer>4</answer>
 		</question>
 		<question id="pre006">
@@ -68,5 +68,13 @@
 		<type>input</type>
 		<text>En que año se estreno la primera pelicula con sonido?</text>
   		<option type="number" value="año" min="1900" max="1950"></option>
+  		</question>
+  		<question id="pre010">
+		<type>input</type>
+		<text>Cual de estas sagas literarias tienes su propia adaptación al cine?</text>
+  		<option type="checkbox" value="1">El Señor de los anillos</option>
+		<option type="checkbox" value="2">Star Wars</option>
+		<option type="checkbox" value="3"> Los juegos del hambre</option>
+		<option type="checkbox" value="3">Matrix</option>
   		</question>
 	</questions>
