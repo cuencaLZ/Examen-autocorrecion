@@ -11,7 +11,7 @@
 		</question>
 		<question id="pre002">
 		<type>input</type>
-		<text>En que año se estreno la primera pelicula de la famosa saga de Jurassic Park?</text>
+		<text>En que fecha se estreno la primera pelicula de la famosa saga de Jurassic Park?</text>
                     <option type="date" value="1"></option>
         </question>
         <question id="pre003">
