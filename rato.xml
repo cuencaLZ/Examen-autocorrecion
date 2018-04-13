@@ -71,7 +71,7 @@
   		</question>
   		<question id="pre010">
 		<type>input</type>
-		<text>Cual de estas sagas literarias tienes su propia adaptación al cine?</text>
+		<text>Cual de estas Peliculas surgieron a partir de una adaptación literaria?</text>
   		<option type="checkbox" value="1">El Señor de los anillos</option>
 		<option type="checkbox" value="2">Star Wars</option>
 		<option type="checkbox" value="3"> Los juegos del hambre</option>
