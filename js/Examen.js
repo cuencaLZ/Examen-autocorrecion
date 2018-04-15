@@ -28,10 +28,9 @@ function gestionarXml(xmldoc){
   preguntas = preguntas[0].children;
   pregunta = ""
   for (i=0; i<preguntas.length;i++) {
-    idPregunta = preguntas[i].getAttribute("id").onchange;
+    idPregunta = preguntas[i].getAttribute("id")
      Contenedor.append(preguntas[i].getElementsByTagName('text')[0].innerHTML);
      if ("select" != xmldoc.getElementsByTagName("type")[i].innerHTML){
-    
       for (j=0; j < preguntas[i].getElementsByTagName('option').length ; j++){
         typopregunta = document.createElement(xmldoc.getElementsByTagName("question")[i].childNodes[1].innerHTML);
         typopregunta.setAttribute("value",preguntas[i].getElementsByTagName('option')[j].getAttribute("value"));
