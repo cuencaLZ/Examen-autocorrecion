@@ -13,7 +13,7 @@ function parseXml (){
           } else {
           }
         }
-        xhttp.open('GET', 'https://rawgit.com/cuencaLZ/Examen-autocorrecion/master/rato.xml', true)
+        xhttp.open('GET', '', true)
 
         xhttp.send()
 
