@@ -12,7 +12,7 @@
 		<question id="pre002">
 		<type>input</type>
 		<text>En que fecha se estreno la primera pelicula de la famosa saga de Jurassic Park?</text>
-                    <option type="date" value="1"></option>
+                    <option type="date" value="05/07/1981"></option>
         </question>
         <question id="pre003">
         <type>input</type>
@@ -67,7 +67,7 @@
 		<question id="pre009">
 		<type>input</type>
 		<text>En que año se estreno la primera pelicula con sonido?</text>
-  		<option type="number" value="1927"></option>
+  		<option type="number" value="1900"></option>
   		</question>
   		<question id="pre010">
 		<type>input</type>
