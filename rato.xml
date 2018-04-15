@@ -11,8 +11,8 @@
 		</question>
 		<question id="pre002">
 		<type>input</type>
-		<text>En que fecha se estreno la primera pelicula de la famosa saga de Jurassic Park?</text>
-                    <option type="date" value="05/07/1981"></option>
+		<text>En que fecha se estreno en España la primera pelicula de la famosa saga de Jurassic Park?</text>
+                    <option type="date" value="30/09/1993"></option>
         </question>
         <question id="pre003">
         <type>input</type>
