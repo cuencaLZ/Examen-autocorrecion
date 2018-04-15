@@ -28,9 +28,10 @@ function gestionarXml(xmldoc){
   preguntas = preguntas[0].children;
   pregunta = ""
   for (i=0; i<preguntas.length;i++) {
-    idPregunta = preguntas[i].getAttribute("id");  
+    idPregunta = preguntas[i].getAttribute("id").onchange;
      Contenedor.append(preguntas[i].getElementsByTagName('text')[0].innerHTML);
      if ("select" != xmldoc.getElementsByTagName("type")[i].innerHTML){
+    
       for (j=0; j < preguntas[i].getElementsByTagName('option').length ; j++){
         typopregunta = document.createElement(xmldoc.getElementsByTagName("question")[i].childNodes[1].innerHTML);
         typopregunta.setAttribute("value",preguntas[i].getElementsByTagName('option')[j].getAttribute("value"));
@@ -46,8 +47,11 @@ function gestionarXml(xmldoc){
       else {
          console.log("select tu madre")
         var select = document.createElement("select")
+        select.id= 'identificador'+i
+        select.setAttribute("onchange", function(){})
         for (t=0; t < preguntas[i].getElementsByTagName('option').length ; t++){
         var option = document.createElement('option')
+        option.setAttribute("value",preguntas[i].getElementsByTagName('option')[t].getAttribute("value"));
        option.innerHTML = preguntas[i].getElementsByTagName('option')[t].innerHTML
          select.appendChild(option)
        
@@ -57,19 +61,8 @@ function gestionarXml(xmldoc){
       Contenedor.appendChild(document.createElement("br"))
       }
       Contenedor.appendChild(document.createElement("br"))
-  }
-  /*Contenedor.appendChild(enunciado)
-  for (i=0;i<4;i++){
-    var span = document.createElement("SPAN")
-    var Contenedor= document.getElementById("exam")
-    var typopregunta=  document.createElement(xmldoc.getElementsByTagName("question") [0].childNodes[1].innerHTML)
-    typopregunta.setAttribute("type", xmldoc.getElementsByTagName("option")[i].getAttribute("type"))
-    span.innerHTML = xmldoc.getElementsByTagName("option")[i].innerHTML
-  Contenedor.appendChild(document.createElement("br"))
-  Contenedor.appendChild(typopregunta)
-  Contenedor.appendChild(span)
 
-  }*/
+  }
 }
 
 

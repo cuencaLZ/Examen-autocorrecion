@@ -3,10 +3,10 @@
 		<question id="pre001">
 			<type>input</type>
 			<text>Que pelicula dio inicio a una saga que tenia como protagonista a un luchador de boxeo italoestadounidense?</text>
-			<option type="radio" value="1">El Club de la Lucha</option>
-			<option type="radio" value="2">Karate Kid</option>
-			<option type="radio" value="3">Rocky</option>
-			<option type="radio" value="4">Rompiendo las Reglas</option>
+			<option type="radio" value="1" name="rd">El Club de la Lucha</option>
+			<option type="radio" value="2" name="rd">Karate Kid</option>
+			<option type="radio" value="3" name="rd">Rocky</option>
+			<option type="radio" value="4" name="rd">Rompiendo las Reglas</option>
 			<answer>3</answer>
 		</question>
 		<question id="pre002">
@@ -17,18 +17,18 @@
         <question id="pre003">
         <type>input</type>
         <text>Selecciona de las opciones siguientes las que corresponden a conocidas frases de la pelicula Casablanca</text>
-        <option type="checkbox" value="1">Siempre nos quedara Paris</option>
-		<option type="checkbox" value="2">Tocala, Sam</option>
-		<option type="checkbox" value="3"> Tocala otra vez, Sam.</option>
-		<option type="checkbox" value="3">Si llegara a pensar en ti, probablemente sí</option>
+        <option type="checkbox" value="1" name="ck">Siempre nos quedara Paris</option>
+		<option type="checkbox" value="2" name="ck">Tocala, Sam</option>
+		<option type="checkbox" value="3" name="ck"> Tocala otra vez, Sam.</option>
+		<option type="checkbox" value="3" name="ck">Si llegara a pensar en ti, probablemente sí</option>
 		</question>
 		<question id="pre004">
 			<type>input</type>
 			<text>Cual esta considerada la pelicula con mas recaudación de la historia?</text>
-				<option type="radio" value="1">Titanic</option>
-				<option type="radio" value="2">Star Wars Epidosio VII</option>
-				<option type="radio" value="3">Avatar</option>
-				<option type="radio" value="4">Apocalipsis Now</option>
+				<option type="radio" value="1" name="rd">Titanic</option>
+				<option type="radio" value="2" name="rd">Star Wars Epidosio VII</option>
+				<option type="radio" value="3" name="rd">Avatar</option>
+				<option type="radio" value="4" name="rd">Apocalipsis Now</option>
 				<answer>3</answer>
 		</question>
 		<question id="pre005">
@@ -52,16 +52,16 @@
 		</question>
 		<question id="pre007">
 			<type>input</type>
-			<text>Que famosa saga de ciencia fición tiene como protagonistas una nave espacial, su capitan y la amistad de este con su 1ºoficial.</text>
+			<text>Que famosa saga de ciencia ficción tiene como protagonistas una nave espacial, su capitan y la amistad de este con su 1ºoficial.</text>
   		<option type="text" name="titulo" value="Nombre"></option>
   		</question>
   		<question id="pre008">
   		<type>input</type>
   		<text>En que pelicula de la famosa saga Regreso al Futuro el protagonista va realmente al futuro.</text>
-  				<option type="radio" value="1">Regreso al Futuro</option>
-				<option type="radio" value="2">Regreso al Futuro II</option>
-				<option type="radio" value="3">Regreso al Futuro III</option>
-				<option type="radio" value="4">Ninguna</option>
+  				<option type="radio" value="1" name="rd">Regreso al Futuro</option>
+				<option type="radio" value="2" name="rd">Regreso al Futuro II</option>
+				<option type="radio" value="3" name="rd">Regreso al Futuro III</option>
+				<option type="radio" value="4" name="rd">Ninguna</option>
 				<answer>2</answer>
 		</question>
 		<question id="pre009">
@@ -72,9 +72,9 @@
   		<question id="pre010">
 		<type>input</type>
 		<text>Cual de estas Peliculas surgieron a partir de una adaptación literaria?</text>
-  		<option type="checkbox" value="1">El Señor de los anillos</option>
-		<option type="checkbox" value="2">Star Wars</option>
-		<option type="checkbox" value="3"> Los juegos del hambre</option>
-		<option type="checkbox" value="3">Matrix</option>
+  		<option type="checkbox" value="1" name="ck">El Señor de los anillos</option>
+		<option type="checkbox" value="2" name="ck">Star Wars</option>
+		<option type="checkbox" value="3" name="ck"> Los juegos del hambre</option>
+		<option type="checkbox" value="3" name="ck">Matrix</option>
   		</question>
 	</questions>
