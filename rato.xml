@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<questions>
-		<question id="pre001">
+		<question>
 			<type>radio</type>
 			<text>Que pelicula dio inicio a una saga que tenia como protagonista a un luchador de boxeo italoestadounidense?</text>
 			<option  value="1" name="rd">El Club de la Lucha</option>
@@ -9,12 +9,12 @@
 			<option  value="4" name="rd">Rompiendo las Reglas</option>
 			<answer>3</answer>
 		</question>
-		<question id="pre002">
+		<question>
 		<type>date</type>
 		<text>En que fecha se estreno en España la primera pelicula de la famosa saga de Jurassic Park?</text>
                     <option value="30/09/1993"></option>
         </question>
-        <question id="pre003">
+        <question>
         <type>checkbox</type>
         <text>Selecciona de las opciones siguientes las que corresponden a conocidas frases de la pelicula Casablanca</text>
         <option  value="1" name="ck">Siempre nos quedara Paris</option>
@@ -22,7 +22,7 @@
 		<option  value="3" name="ck"> Tocala otra vez, Sam.</option>
 		<option  value="4" name="ck">Si llegara a pensar en ti, probablemente sí</option>
 		</question>
-		<question id="pre004">
+		<question>
 			<type>radio</type>
 			<text>Cual esta considerada la pelicula con mas recaudación de la historia?</text>
 				<option  value="1" name="rd">Titanic</option>
@@ -31,7 +31,7 @@
 				<option  value="4" name="rd">Apocalipsis Now</option>
 				<answer>3</answer>
 		</question>
-		<question id="pre005">
+		<question>
 			<type>select</type>
 			<text>Cual de estos personajes de pelicula esta interpretado por Bruce Willis?</text>
 				<option  value="1">Luke Skywalker</option>
@@ -40,7 +40,7 @@
 			    <option  value="4">John McClane</option>
 			    <answer>4</answer>
 		</question>
-		<question id="pre006">
+		<question>
 			<type>select</type>
 			<text>Selecciona la pelicula Belica considerada como una pelicula de culto.</text>
 			  <option value="1">Los 7 Samurais</option>
@@ -50,12 +50,12 @@
 			  <answer>3</answer>
 		
 		</question>
-		<question id="pre007">
+		<question>
 			<type>text</type>
 			<text>Que famosa saga de ciencia ficción tiene como protagonistas una nave espacial, su capitan y la amistad de este con su 1ºoficial.</text>
   		<option name="titulo" value="Nombre"></option>
   		</question>
-  		<question id="pre008">
+  		<question>
   		<type>radio</type>
   		<text>En que pelicula de la famosa saga Regreso al Futuro el protagonista va realmente al futuro.</text>
   				<option  value="1" name="rd">Regreso al Futuro</option>
@@ -64,12 +64,12 @@
 				<option  value="4" name="rd">Ninguna</option>
 				<answer>2</answer>
 		</question>
-		<question id="pre009">
+		<question>
 		<type>number</type>
 		<text>En que año se estreno la primera pelicula con sonido?</text>
   		<option value="1900"></option>
   		</question>
-  		<question id="pre010">
+  		<question>
 		<type>checkbox</type>
 		<text>Cual de estas Peliculas surgieron a partir de una adaptación literaria?</text>
   		<option  value="1" name="ck">El Señor de los anillos</option>
