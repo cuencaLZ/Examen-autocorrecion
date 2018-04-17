@@ -28,10 +28,31 @@ function gestionarXml(xmldoc){
   preguntas = preguntas[0].children;
   pregunta = ""
   for (i=0; i<preguntas.length;i++) {
-    idPregunta = preguntas[i].getAttribute("id")
+    preguntas[i].setAttribute("onchange", function(){})
+    idPregunta = preguntas[i].getAttribute("id").onchange;
      Contenedor.append(preguntas[i].getElementsByTagName('text')[0].innerHTML);
+     var boton = document.createElement("Button")
+     boton.setAttribute('Onlick'," Corregir()")
+     boton.innerHTML= "enviar";
      if ("select" != xmldoc.getElementsByTagName("type")[i].innerHTML){
       for (j=0; j < preguntas[i].getElementsByTagName('option').length ; j++){
+        var tipo = xmldoc.getElementsByTagName('option')[j].getAttribute('type');
+        console.log(tipo)
+        console.log(xmldoc.getElementsByTagName('option')[j].getAttribute('type'))
+        switch (tipo) {
+          case 'radio' || 'checkbox':
+        typopregunta = document.createElement(xmldoc.getElementsByTagName("question")[i].childNodes[1].innerHTML);
+        typopregunta.setAttribute("onchange"," mama()");
+        typopregunta.setAttribute("value",preguntas[i].getElementsByTagName('option')[j].getAttribute("value"));
+        typopregunta.setAttribute("type", preguntas[i].getElementsByTagName('option')[j].getAttribute("type"));
+        typopregunta.setAttribute("name", i);
+        var span = document.createElement("SPAN");
+        span.innerHTML = preguntas[i].getElementsByTagName('option')[j].innerHTML
+        Contenedor.appendChild(document.createElement("br"))
+        Contenedor.appendChild(typopregunta)
+        Contenedor.appendChild(span)
+        break;
+        case 'date' || 'text' || 'number':
         typopregunta = document.createElement(xmldoc.getElementsByTagName("question")[i].childNodes[1].innerHTML);
         typopregunta.setAttribute("value",preguntas[i].getElementsByTagName('option')[j].getAttribute("value"));
         typopregunta.setAttribute("type", preguntas[i].getElementsByTagName('option')[j].getAttribute("type"));
@@ -41,13 +62,17 @@ function gestionarXml(xmldoc){
         Contenedor.appendChild(document.createElement("br"))
         Contenedor.appendChild(typopregunta)
         Contenedor.appendChild(span)
+        break;
+        default:
+                console.log("Error Switch"); 
+        }
       }
       }
       else {
          console.log("select tu madre")
         var select = document.createElement("select")
         select.id= 'identificador'+i
-        select.setAttribute("onchange", function(){})
+        select.setAttribute("onchange"," mama()")
         for (t=0; t < preguntas[i].getElementsByTagName('option').length ; t++){
         var option = document.createElement('option')
         option.setAttribute("value",preguntas[i].getElementsByTagName('option')[t].getAttribute("value"));
@@ -60,8 +85,76 @@ function gestionarXml(xmldoc){
       Contenedor.appendChild(document.createElement("br"))
       }
       Contenedor.appendChild(document.createElement("br"))
+      
 
   }
+  Contenedor.appendChild(boton)
 }
+function mama(j){
+  console.log(j)
+  var x = document.getElementsByTagName('option')[j].getAttribute('value');
+  console.log(x)
+
+  
+  
+  
+  function Corregir(){
+  
+
+  }
+  
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function checkRadio(x) {
+
+    var radios = document.getElementsByName(x);
+    var isNull = true;
+    for (var z = 0, length = radios.length; z < length; z++) {
+
+        if (radios[z].checked) //Selecciona la respuesta seleccionada
+        {
+            //Comprueba si tiene el atributo correcto=true, y si es así, suma 1 a los puntos
+            var preguntaSel = radios[z].getAttribute("value");
+
+            var resp = xmlDoc.getElementsByTagName("pregunta")[x].getElementsByTagName("respuesta")[preguntaSel].getAttribute("correcto");
+
+            if (resp) {
+                totalPoints++;
+                document.getElementById("div" + x).style.backgroundColor = "green";
+            }
+            else {
+                document.getElementById("div" + x).style.backgroundColor = "red";
+
+            }
+
+            break;
+        }
+
+        if (isNull) {
+            document.getElementById("div" + x).style.backgroundColor = "red";
+        }
+    }
+
+}
+}
