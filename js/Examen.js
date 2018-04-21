@@ -1,18 +1,21 @@
-var PREGUNTAS;
-
+var xmlDoc;
+var numquestions = 0;
+var totalPoints = 0;
+var isAlreadyCorrect = false;
+var isLogged = false;
 
 window.onload = function () {
-  parseXml()
+  mostrarXml();
 
-}
-function parseXml() {
-
+};
+function mostrarXml() {
   let xhttp = new XMLHttpRequest()
   xhttp.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
       parser = new DOMParser();
       xmlDoc = parser.parseFromString(xhttp.responseText, "text/xml");
-      PREGUNTAS = xmlDoc.getElementsByTagName('question');
+      numquestions = xmlDoc.getElementsByTagName('questions').length;
+      imprimirquestions();
     } else {
     }
   }
@@ -22,141 +25,395 @@ function parseXml() {
 
 };
 
-function gestionarXml(xmldoc) {
+function imprimirquestions() {
 
-  //var Contenedor = document.getElementById("exam");
+  for (var i = 0; i < numquestions; i++) {
 
-  for (i = 0; i < PREGUNTAS.length; i++) {
+      var tipo = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('type')[0].innerHTML;
 
-    var tipo = PREGUNTAS[i].getElementsByTagName('type')[0].innerHTML;
-
-    switch (tipo) {
-      case "radio":
-        crearRadioButton(i);
-        break;
-      case "checkbox":
-        crerCheckBox(i);
-        break;
-      case "number":
-        crearNumber(i);
-        break;
-      case "date":
-        crearDate(i);
-        break;
-      case "select":
-        crearSelect(i);
-        break;
-
-
-
-    }
-
-    
-    // Contenedor.append(preguntas[i].getElementsByTagName('text')[0].innerHTML);
-    // var boton = document.createElement("Button")
-    // boton.setAttribute('Onlick', " Corregir()")
-    // boton.innerHTML = "enviar";
-    // if ("select" != xmldoc.getElementsByTagName("type")[i].innerHTML) {
-    //   for (j = 0; j < preguntas[i].getElementsByTagName('option').length; j++) {
-    //     var tipo = xmldoc.getElementsByTagName('option')[j].getAttribute('type');
-    //     console.log(tipo)
-    //     console.log(xmldoc.getElementsByTagName('option')[j].getAttribute('type'))
-    //     switch (tipo) {
-    //       case 'radio' || 'checkbox':
-    //         typopregunta = document.createElement(xmldoc.getElementsByTagName("question")[i].childNodes[1].innerHTML);
-    //         typopregunta.setAttribute("onchange", " mama()");
-    //         typopregunta.setAttribute("value", preguntas[i].getElementsByTagName('option')[j].getAttribute("value"));
-    //         typopregunta.setAttribute("type", preguntas[i].getElementsByTagName('option')[j].getAttribute("type"));
-    //         typopregunta.setAttribute("name", i);
-    //         var span = document.createElement("SPAN");
-    //         span.innerHTML = preguntas[i].getElementsByTagName('option')[j].innerHTML
-    //         Contenedor.appendChild(document.createElement("br"))
-    //         Contenedor.appendChild(typopregunta)
-    //         Contenedor.appendChild(span)
-    //         break;
-    //       case 'date' || 'text' || 'number':
-    //         typopregunta = document.createElement(xmldoc.getElementsByTagName("question")[i].childNodes[1].innerHTML);
-    //         typopregunta.setAttribute("value", preguntas[i].getElementsByTagName('option')[j].getAttribute("value"));
-    //         typopregunta.setAttribute("type", preguntas[i].getElementsByTagName('option')[j].getAttribute("type"));
-    //         typopregunta.setAttribute("name", idPregunta);
-    //         var span = document.createElement("SPAN");
-    //         span.innerHTML = preguntas[i].getElementsByTagName('option')[j].innerHTML
-    //         Contenedor.appendChild(document.createElement("br"))
-    //         Contenedor.appendChild(typopregunta)
-    //         Contenedor.appendChild(span)
-    //         break;
-    //       default:
-    //         console.log("Error Switch");
-        }
+      switch (tipo) {
+          case "radio":
+              crearRadio(i);
+              break;
+          case "check":
+              crearCheck(i);
+              break;
+          case "text":
+              crearText(i);
+              break;
+          case "select":
+              crearSelect(i);
+              break;
+          case "number":
+              crearRange(i);
+              break;
+          default:
+              console.log("default");
       }
-    }
-    else {
-      console.log("select tu madre")
-      var select = document.createElement("select")
-      select.id = 'identificador' + i
-      select.setAttribute("onchange", " mama()")
-      for (t = 0; t < preguntas[i].getElementsByTagName('option').length; t++) {
-        var option = document.createElement('option')
-        option.setAttribute("value", preguntas[i].getElementsByTagName('option')[t].getAttribute("value"));
-        option.innerHTML = preguntas[i].getElementsByTagName('option')[t].innerHTML
-        select.appendChild(option)
-
-      }
-      Contenedor.appendChild(document.createElement("br"))
-      Contenedor.appendChild(select)
-      Contenedor.appendChild(document.createElement("br"))
-    }
-    Contenedor.appendChild(document.createElement("br"))
-
-
   }
-  Contenedor.appendChild(boton)
 }
 
+function crearRadio(i) {
 
-function crearRadioButton(){}
-function crerCheckBox(){}
-function crearSelect() {}
-function crearDate(){}
-function crearNumber(){}
-/* ---------- CORREIR -----------*/
+  var numSol = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('option').length;
+  var element = document.getElementById("formu");
+
+  var div = document.createElement("div");
+  div.setAttribute("id", "div" + i);
+  div.setAttribute("class", "question");
+  element.appendChild(div);
+  var enunciado = document.createElement("label");
+  enunciado.setAttribute('for', i);
+  enunciado.innerHTML = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('text')[0].innerHTML + "<br>";
+  // inputs
+  for (var k = 0; k < numSol; k++) {
+
+      var question = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('option')[k].innerHTML;
+      var radioBut = document.createElement("input");
+
+      radioBut.setAttribute("type", "radio");
+      radioBut.setAttribute("name", i);
+      radioBut.setAttribute("value", k);
+      radioBut.setAttribute('id', "div" + i + k + "radio");
+      div.appendChild(radioBut);
+
+      var label = document.createElement('label');
+      label.setAttribute('for', "div" + i + k + "radio");
+      label.innerHTML = question + "<br>";
+
+      div.appendChild(label);
+  }
 
 
-function mama(j) {
-  console.log(j)
-  var x = document.getElementsByTagName('option')[j].getAttribute('value');
-  console.log(x)
+}
 
+function crearCheck(i) {
+  var numSol = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('option').length;
+  var element = document.getElementById("formu");
 
-    function checkRadio(x) {
+  var div = document.createElement("div");
+  div.setAttribute("id", "div" + i);
+  div.setAttribute("class", "question");
+  element.appendChild(div);
 
-      var radios = document.getElementsByName(x);
-      var isNull = true;
-      for (var z = 0, length = radios.length; z < length; z++) {
+  //enunciado
+  var enunciado = document.createElement("label");
+  enunciado.setAttribute('for', i);
+  enunciado.innerHTML = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('text')[0].innerHTML + "<br>";
+  div.appendChild(enunciado);
 
-        if (radios[z].checked) //Selecciona la respuesta seleccionada
-        {
+  //Radio inputs
+  for (var k = 0; k < numSol; k++) {
+
+      var question = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('option')[k].innerHTML;
+      var check = document.createElement("input");
+
+      check.setAttribute("type", "checkbox");
+      check.setAttribute("name", i);
+      check.setAttribute("value", k);
+      check.setAttribute('id', "div" + i + k + "check");
+      div.appendChild(check);
+
+      var label = document.createElement('label');
+      label.setAttribute('for', "div" + i + k + "check");
+      label.innerHTML = question + "<br>";
+
+      div.appendChild(label);
+  }
+}
+
+function crearText(i) {
+  var numSol = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('option').length;
+  var element = document.getElementById("formu");
+
+  var div = document.createElement("div");
+  div.setAttribute("id", "div" + i);
+  div.setAttribute("class", "question");
+  element.appendChild(div);
+
+  //pregunta
+  var enunciado = document.createElement("label");
+  enunciado.setAttribute('for', i);
+  enunciado.innerHTML = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('text')[0].innerHTML + "<br>";
+  div.appendChild(enunciado);
+
+  // inputs
+  for (var k = 0; k < numSol; k++) {
+
+      var question = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('option')[k].innerHTML;
+      var text = document.createElement("input");
+
+      text.setAttribute("type", "text");
+      text.setAttribute("name", i);
+      text.setAttribute('id', i + "text");
+      div.appendChild(text);
+
+      var label = document.createElement('label');
+      label.setAttribute('for', i);
+      label.innerHTML = "<br>";
+      div.appendChild(label);
+  }
+}
+
+function crearSelect(i) {
+  var numSol = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('option').length;
+  var element = document.getElementById("formu");
+
+  var div = document.createElement("div");
+  div.setAttribute("id", "div" + i);
+  div.setAttribute("class", "question");
+  element.appendChild(div);
+
+  //enunciado
+  var enunciado = document.createElement("label");
+  enunciado.setAttribute('for', i);
+  enunciado.innerHTML = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('enunciado')[0].innerHTML + "<br>";
+  div.appendChild(enunciado);
+
+  var select = document.createElement("select");
+  select.setAttribute("id", i + "select");
+  select.setAttribute("name", i);
+  div.appendChild(select);
+
+  //Option inputs
+  for (var k = 0; k < numSol; k++) {
+
+      var question = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('option')[k].innerHTML;
+      var option = document.createElement("option");
+
+      option.setAttribute("name", i);
+      option.setAttribute("value", k);
+      option.setAttribute('id', k + "check");
+      option.innerHTML = question;
+      select.appendChild(option);
+
+      var label = document.createElement('label');
+      label.setAttribute('for', i);
+  }
+  label.innerHTML = "<br>";
+
+  div.appendChild(label);
+}
+
+function crearnumber(i) {
+
+  var element = document.getElementById("formu");
+
+  var div = document.createElement("div");
+  div.setAttribute("id", "div" + i);
+  div.setAttribute("class", "question");
+  element.appendChild(div);
+
+  //enunciado
+  var enunciado = document.createElement("label");
+  enunciado.setAttribute('for', i);
+  enunciado.innerHTML = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('enunciado')[0].innerHTML + "<br>";
+  div.appendChild(enunciado);
+
+  var range = document.createElement("input");
+
+  range.setAttribute("type", "range");
+  range.setAttribute("min", 0);
+  range.setAttribute("max", 1000);
+  range.setAttribute("name", i);
+  range.setAttribute("value", 50);
+  range.setAttribute('id', i + "range");
+  div.appendChild(range);
+
+  var label = document.createElement('label');
+  label.setAttribute('for', i);
+  label.innerHTML = "<br>";
+
+  div.appendChild(label);
+}
+
+function crearPuntuacion() {
+  var element = document.getElementById("cabecera");
+
+  var div = document.createElement("div");
+  div.setAttribute("id", "puntuacion");
+  element.appendChild(div);
+
+  var label = document.createElement('label');
+  label.innerHTML = "Puntuacion total:" + totalPoints;
+  div.appendChild(label);
+}
+
+function checkquestions() {
+
+  if (!isAlreadyCorrect) {
+      var numPreg = xmlDoc.getElementsByTagName('question').length;
+      totalPoints = 0;
+
+      for (var i = 0; i < numPreg; i++) {
+          var tipo = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName("tipo")[0].innerHTML;
+
+          if (tipo === "radio") {
+              checkRadio(i);
+          }
+          else if (tipo === "check") {
+              checkCheckbox(i);
+          }
+          else if (tipo === "select") {
+              checkSelect(i);
+          }
+          else if (tipo === "text") {
+              checkText(i);
+          }
+          else if (tipo === "range") {
+              checkRange(i);
+          }
+      }
+      crearPuntuacion();
+      document.getElementById("boton").setAttribute("style", "background-color: grey !important");
+      document.getElementById("boton").innerText = totalPoints + "/" + numPreg + " questions correctas";
+      isAlreadyCorrect = true;
+  }
+  else {
+      alert("Examen ya corregido. Recarga la página para volver a intentarlo.")
+  }
+}
+
+function checkRadio(x) {
+
+  var radios = document.getElementsByName(x);
+  var isNull = true;
+  for (var z = 0, length = radios.length; z < length; z++) {
+
+      if (radios[z].checked) //Selecciona la option seleccionada
+      {
           //Comprueba si tiene el atributo correcto=true, y si es así, suma 1 a los puntos
-          var preguntaSel = radios[z].getAttribute("value");
+          var questionSel = radios[z].getAttribute("value");
 
-          var resp = xmlDoc.getElementsByTagName("pregunta")[x].getElementsByTagName("respuesta")[preguntaSel].getAttribute("correcto");
+          var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("option")[questionSel].getAttribute("correcto");
 
           if (resp) {
-            totalPoints++;
-            document.getElementById("div" + x).style.backgroundColor = "green";
+              totalPoints++;
+              document.getElementById("div" + x).style.backgroundColor = "green";
           }
           else {
-            document.getElementById("div" + x).style.backgroundColor = "red";
+              document.getElementById("div" + x).style.backgroundColor = "red";
 
           }
 
           break;
-        }
-
-        if (isNull) {
-          document.getElementById("div" + x).style.backgroundColor = "red";
-        }
       }
 
-    }
+      if (isNull) {
+          document.getElementById("div" + x).style.backgroundColor = "red";
+      }
   }
+
+  var imagen = xmlDoc.getElementsByTagName('question')[x].getElementsByTagName('img')[0];
+  if (imagen) {
+      var image = document.getElementById("jirafa");
+      image.src = "img/jirafa_ans.jpg"
+
+  }
+
+
+}
+
+function checkCheckbox(x) {
+
+  var contCorrectas = 0;
+  var contSeleccionadas = 0;
+  var contSelecCorrectas = 0;
+  var radios = document.getElementsByName(x);
+
+  //Cuenta cuantas options tienen que ser seleccionadas
+  for (var z = 0, length = radios.length; z < length; z++) {
+      var questionSel = radios[z].getAttribute("value");
+      if (xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("option")[questionSel].getAttribute("correcto")) {
+          contCorrectas += 1;
+      }
+
+  }
+
+  //Comprobamos cuantas options correctas ha seleccionado el usuario
+  for (var z = 0, length = radios.length; z < length; z++) {
+
+      if (radios[z].checked) //Selecciona la option seleccionada
+      {
+          var questionSel = radios[z].getAttribute("value");
+          var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("option")[questionSel].getAttribute("correcto");
+
+          if (resp) {
+              contSelecCorrectas++;
+              contSeleccionadas++;
+          }
+          else {
+              contSeleccionadas++;
+          }
+          // break;
+      }
+  }
+
+  //Comprobacion final
+  if (contSelecCorrectas === contCorrectas && contCorrectas === contSeleccionadas) {
+      totalPoints++;
+
+      document.getElementById("div" + x).style.backgroundColor = "green";
+  }
+  else {
+      document.getElementById("div" + x).style.backgroundColor = "red";
+
+  }
+
+}
+
+function checkText(x) {
+  try {
+      var userAns = document.getElementById(x + "text").value;
+  } catch (e) {
+  }
+  var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("option")[0].innerHTML;
+
+  if (resp === userAns) {
+      totalPoints++;
+      document.getElementById("div" + x).style.backgroundColor = "green";
+  }
+  else {
+      document.getElementById("div" + x).style.backgroundColor = "red";
+
+  }
+}
+
+function checkSelect(x) {
+
+  var option = document.getElementsByName(x);
+  // var option = document.getElementById(x+"select").value;
+
+
+  for (var z = 0, length = option.length; z < length; z++) {
+      if (option[z].selected) //Selecciona la option seleccionada
+      {
+          //Comprueba si tiene el atributo correcto=true, y si es así, suma 1 a los puntos
+          var questionSel = document.getElementById(x + "select").value;
+
+          var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("option")[questionSel].getAttribute("correcto");
+
+          if (resp) {
+              totalPoints++;
+              document.getElementById("div" + x).style.backgroundColor = "green";
+          }
+          else {
+              document.getElementById("div" + x).style.backgroundColor = "red";
+
+          }
+          break;
+      }
+  }
+}
+
+function checkRange(x) {
+  var points = document.getElementById(x + "range").value;
+  var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("option")[0].innerHTML;
+  if (points === resp) {
+      totalPoints++;
+      document.getElementById("div" + x).style.backgroundColor = "green";
+  }
+  else {
+      document.getElementById("div" + x).style.backgroundColor = "red";
+  }
+}
