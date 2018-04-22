@@ -14,7 +14,7 @@
 		<option>30/09/1993</option>
 	</question>
 	<question>
-		<type>checkbox</type>
+		<type>check</type>
 		<text>Selecciona de las opciones siguientes las que corresponden a conocidas frases de la pelicula Casablanca</text>
 		<option correcto="true">Siempre nos quedara Paris.</option>
 		<option correcto="true">Tocala, Sam.</option>
@@ -65,7 +65,7 @@
 		<option>1927</option>
 	</question>
 	<question>
-		<type>checkbox</type>
+		<type>check</type>
 		<text>Cual de estas Peliculas surgieron a partir de una adaptación literaria?</text>
 		<option correcto="true">El Señor de los anillos</option>
 		<option>Star Wars</option>
