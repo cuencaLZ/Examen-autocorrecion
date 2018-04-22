@@ -62,7 +62,7 @@
 	<question>
 		<type>number</type>
 		<text> En que año se estreno la primera pelicula con sonido?</text>
-		<option correcto="false">>1927</option>
+		<option correcto="false">1927</option>
 	</question>
 	<question>
 		<type>checkbox</type>
