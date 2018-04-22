@@ -11,18 +11,16 @@ function mostrarXml() {
     let xhttp = new XMLHttpRequest()
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            parser = new DOMParser();
-            xmlDoc = parser.parseFromString(xhttp.responseText, "text/xml");
+           xmlDoc= this.responseXML
             numquestions = xmlDoc.getElementsByTagName('question').length;
             imprimirquestions();
-        } else {
         }
-    }
-    xhttp.open('GET', 'https://raw.githubusercontent.com/cuencaLZ/Examen-autocorrecion/master/rato.xml', true)
+    };
+    xhttp.open('POST', 'rato.xml', true);
 
-    xhttp.send()
+    xhttp.send();
 
-};
+}
 
 function imprimirquestions() {
 
@@ -44,10 +42,10 @@ function imprimirquestions() {
                 crearSelect(i);
                 break;
             case "number":
-                crearRange(i);
+                crearnumber(i);
                 break;
             case "date":
-                crearRange(i);
+                creardate(i);
                 break;
             default:
                 console.log("default");
@@ -213,15 +211,13 @@ function crearnumber(i) {
     enunciado.innerHTML = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('text')[0].innerHTML + "<br>";
     div.appendChild(enunciado);
 
-    var range = document.createElement("input");
+    var number = document.createElement("input");
 
-    range.setAttribute("type", "range");
-    range.setAttribute("min", 0);
-    range.setAttribute("max", 1000);
-    range.setAttribute("name", i);
-    range.setAttribute("value", 50);
-    range.setAttribute('id', i + "range");
-    div.appendChild(range);
+    number.setAttribute("type", "number")
+   number.setAttribute("name", i);
+    number.setAttribute("value", 1900);
+    number.setAttribute('id', i + "number");
+    div.appendChild(number);
 
     var label = document.createElement('label');
     label.setAttribute('for', i);
@@ -253,7 +249,7 @@ function creardate(i) {
         date.setAttribute("type", "date");
         date.setAttribute("name", i);
         date.setAttribute('id', i + "date");
-        div.appendChild(text);
+        div.appendChild(date);
 
         var label = document.createElement('label');
         label.setAttribute('for', i);
