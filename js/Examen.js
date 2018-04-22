@@ -346,7 +346,7 @@ function checkCheckbox(x) {
     //Cuenta cuantas options tienen que ser seleccionadas
     for (var z = 0, length = radios.length; z < length; z++) {
         var questionSel = radios[z].getAttribute("value");
-        if (xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("option")[questionSel].getAttribute("correcto")) {
+        if (xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("option")[questionSel].getAttribute("correcto")==="true") {
             contCorrectas += 1;
         }
 
@@ -360,7 +360,7 @@ function checkCheckbox(x) {
             var questionSel = radios[z].getAttribute("value");
             var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("option")[questionSel].getAttribute("correcto");
 
-            if (resp) {
+            if (resp==="true") {
                 contSelecCorrectas++;
                 contSeleccionadas++;
             }
