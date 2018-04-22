@@ -3,83 +3,73 @@
 	<question>
 		<type>radio</type>
 		<text>Que pelicula dio inicio a una saga que tenia como protagonista a un luchador de boxeo italoestadounidense?</text>
-		<option  value="1" name="rd">El Club de la Lucha</option>
-		<option  value="2" name="rd">Karate Kid</option>
-		<option  value="3" name="rd">Rocky</option>
-		<option  value="4" name="rd">Rompiendo las Reglas</option>
-		<answer>3</answer>
+		<option>El Club de la Lucha</option>
+		<option>Karate Kid</option>
+		<option correcto="true">Rocky</option>
+		<option</option>
 	</question>
 	<question>
 		<type>date</type>
 		<text>En que fecha se estreno en España la primera pelicula de la famosa saga de Jurassic Park?</text>
-		<option value="30/09/1993"/>
+		<option>30/09/1993</option>
 	</question>
 	<question>
 		<type>checkbox</type>
 		<text>Selecciona de las opciones siguientes las que corresponden a conocidas frases de la pelicula Casablanca</text>
-		<option  value="1" name="ck">Siempre nos quedara Paris.</option>
-		<option  value="2" name="ck">Tocala, Sam.</option>
-		<option  value="3" name="ck"> Tocala otra vez, Sam.</option>
-		<option  value="4" name="ck">Nadie me llama gallina.</option>
-		<answer>1</answer>
-		<answer>2</answer>
+		<option correcto="true">Siempre nos quedara Paris.</option>
+		<option correcto="true">Tocala, Sam.</option>
+		<option> Tocala otra vez, Sam.</option>
+		<option>Nadie me llama gallina.</option>
 	</question>
 	<question>
 		<type>radio</type>
 		<text>Cual esta considerada la pelicula con mas recaudación de la historia?</text>
-		<option  value="1" name="rd">Titanic</option>
-		<option  value="2" name="rd">Star Wars Epidosio VII</option>
-		<option  value="3" name="rd">Avatar</option>
-		<option  value="4" name="rd">Apocalipsis Now</option>
-		<answer>3</answer>
+		<option>Titanic</option>
+		<option>Star Wars Epidosio VII</option>
+		<option correcto="true">Avatar</option>
+		<option>Apocalipsis Now</option>
 	</question>
 	<question>
 		<type>select</type>
 		<text>Cual de estos personajes de pelicula esta interpretado por Bruce Willis?</text>
-		<option  value="1">Luke Skywalker</option>
-		<option  value="2">Henry Walton Jones Jr.</option>
-		<option  value="3">John Connor</option>
-		<option  value="4">John McClane</option>
-		<answer>4</answer>
+		<option>Luke Skywalker</option>
+		<option>Henry Walton Jones Jr.</option>
+		<option>John Connor</option>
+		<option correcto="true">John McClane</option>
 	</question>
 	<question>
 		<type>select</type>
 		<text>Selecciona la pelicula Belica considerada como una pelicula de culto.</text>
-		<option value="1">Los 7 Samurais</option>
-		<option value="2">Salvando al Soldado Ryan</option>
-		<option value="3">Apocalipsis Now</option>
-		<option value="4">La Chaqueta Metalica</option>
-		<answer>3</answer>
+		<option>Los 7 Samurais</option>
+		<option>Salvando al Soldado Ryan</option>
+		<option correcto="true">Apocalipsis Now</option>
+		<option>La Chaqueta Metalica</option>
 
 	</question>
 	<question>
 		<type>text</type>
 		<text>Que famosa saga de ciencia ficción tiene como protagonistas una nave espacial, su capitan y la amistad de este con su 1ºoficial.</text>
-		<option name="titulo" value="Nombre"/>
-		<answer>Star Trek</answer>
+		<option>Star Trek</option>
 	</question>
 	<question>
 		<type>radio</type>
 		<text>En que pelicula de la famosa saga Regreso al Futuro el protagonista va realmente al futuro.</text>
-		<option  value="1" name="rd">Regreso al Futuro</option>
-		<option  value="2" name="rd">Regreso al Futuro II</option>
-		<option  value="3" name="rd">Regreso al Futuro III</option>
-		<option  value="4" name="rd">Ninguna</option>
-		<answer>2</answer>
+		<option>Regreso al Futuro</option>
+		<option correcto="true">Regreso al Futuro II</option>
+		<option>Regreso al Futuro III</option>
+		<option>Ninguna</option>
 	</question>
 	<question>
 		<type>number</type>
 		<text>En que año se estreno la primera pelicula con sonido?</text>
-		<option value="1900"/>
+		<option>1927</option>
 	</question>
 	<question>
 		<type>checkbox</type>
 		<text>Cual de estas Peliculas surgieron a partir de una adaptación literaria?</text>
-		<option  value="1" name="ck">El Señor de los anillos</option>
-		<option  value="2" name="ck">Star Wars</option>
-		<option  value="3" name="ck"> Los juegos del hambre</option>
-		<option  value="3" name="ck">Matrix</option>
-		<answer>1</answer>
-		<answer>3</answer>
+		<option correcto="true">El Señor de los anillos</option>
+		<option>Star Wars</option>
+		<option correcto="true"> Los juegos del hambre</option>
+		<option>Matrix</option>
 	</question>
 </questions>
