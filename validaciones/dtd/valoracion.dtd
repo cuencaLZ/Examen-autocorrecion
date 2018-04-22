@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT questions (question)+>
+<!ELEMENT question (type,text,option*)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT text (#PCDATA)>
+<!ELEMENT option (#PCDATA)>
+<!ATTLIST option correcto CDATA #REQUIRED>

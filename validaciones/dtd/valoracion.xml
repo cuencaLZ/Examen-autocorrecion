@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE questions SYSTEM "valoracion.dtd">
+<questions>
+	<question>
+		<type>radio</type>
+		<text>Que pelicula dio inicio a una saga que tenia como protagonista a un luchador de boxeo italoestadounidense?</text>
+		<option correcto="false">El Club de la Lucha</option>
+		<option correcto="false">Karate Kid</option>
+		<option correcto="true">Rocky</option>
+		<option correcto="false">La Zapatilla asesina</option>
+	</question>
+	<question>
+		<type>date</type>
+		<text> En que fecha se estreno en España la primera pelicula de la famosa saga de Jurassic Park?</text>
+		<option correcto="false">1993-09-30</option>
+	</question>
+	<question>
+		<type>checkbox</type>
+		<text>Selecciona de las opciones siguientes las que corresponden a conocidas frases de la pelicula Casablanca</text>
+		<option correcto="true">Siempre nos quedara Paris.</option>
+		<option correcto="true">Tocala, Sam.</option>
+		<option correcto="false"> Tocala otra vez, Sam.</option>
+		<option correcto="false">Nadie me llama gallina.</option>
+	</question>
+	<question>
+		<type>radio</type>
+		<text>Cual esta considerada la pelicula con mas recaudación de la historia?</text>
+		<option correcto="false">Titanic</option>
+		<option correcto="false">Star Wars Epidosio VII</option>
+		<option correcto="true">Avatar</option>
+		<option correcto="false">Apocalipsis Now</option>
+	</question>
+	<question>
+		<type>select</type>
+		<text>Cual de estos personajes de pelicula esta interpretado por Bruce Willis?</text>
+		<option correcto="false">Luke Skywalker</option>
+		<option correcto="false">Henry Walton Jones Jr.</option>
+		<option correcto="false">John Connor</option>
+		<option correcto="true">John McClane</option>
+	</question>
+	<question>
+		<type>select</type>
+		<text>Selecciona la pelicula Belica considerada como una pelicula de culto.</text>
+		<option correcto="false">Los 7 Samurais</option>
+		<option correcto="false">Salvando al Soldado Ryan</option>
+		<option correcto="true">Apocalipsis Now</option>
+		<option correcto="false">La Chaqueta Metalica</option>
+
+	</question>
+	<question>
+		<type>text</type>
+		<text>Que famosa saga de ciencia ficción tiene como protagonistas una nave espacial, su capitan y la amistad de este con su 1ºoficial.</text>
+		<option correcto="false">Star Trek</option>
+	</question>
+	<question>
+		<type>radio</type>
+		<text>En que pelicula de la famosa saga Regreso al Futuro el protagonista va realmente al futuro.</text>
+		<option correcto="false">Regreso al Futuro</option>
+		<option correcto="true">Regreso al Futuro II</option>
+		<option correcto="false">Regreso al Futuro III</option>
+		<option correcto="false">Ninguna</option>
+	</question>
+	<question>
+		<type>number</type>
+		<text> En que año se estreno la primera pelicula con sonido?</text>
+		<option correcto="false">>1927</option>
+	</question>
+	<question>
+		<type>checkbox</type>
+		<text>Cual de estas Peliculas surgieron a partir de una adaptación literaria?</text>
+		<option correcto="true">El Señor de los anillos</option>
+		<option correcto="false">Star Wars</option>
+		<option correcto="true"> Los juegos del hambre</option>
+		<option correcto="false">Matrix</option>
+	</question>
+</questions>
