@@ -6,12 +6,12 @@
 		<option>El Club de la Lucha</option>
 		<option>Karate Kid</option>
 		<option correcto="true">Rocky</option>
-		<option></option>
+		<option>La Zapatilla asesina</option>
 	</question>
 	<question>
 		<type>date</type>
 		<text>En que fecha se estreno en España la primera pelicula de la famosa saga de Jurassic Park?</text>
-		<option>30/09/1993</option>
+		<option>1993-09-30</option>
 	</question>
 	<question>
 		<type>checkbox</type>
