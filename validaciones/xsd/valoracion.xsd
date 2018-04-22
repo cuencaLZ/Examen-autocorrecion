@@ -1,0 +1,48 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="questions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="question" maxOccurs="11" minOccurs="10">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="type">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="text"/>
+                    <xs:enumeration value="select"/>
+                    <xs:enumeration value="checkbox"/>
+                    <xs:enumeration value="radio"/>
+                    <xs:enumeration value="date"/>
+                    <xs:enumeration value="number"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+               <xs:element name="text">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="option" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="correcto">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:pattern value="true"/>
+                            <xs:pattern value="false"/>
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:attribute>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+             </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
