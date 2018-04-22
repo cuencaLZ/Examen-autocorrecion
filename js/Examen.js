@@ -315,12 +315,12 @@ function checkRadio(x) {
     var isNull = true;
     for (var z = 0, length = radios.length; z < length; z++) {
 
-        if (radios[z].checked > 0) //Selecciona la option seleccionada
+        if (radios[z].checked) //Selecciona la option seleccionada
         {
             //Comprueba si la seleccion es buena, si lo es suma 1
-            var questionSel = radios[z].getAttribute("value");
-            var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("option")[questionSel].getAttribute("correcto");
-            if (resp) {
+            var gomal = radios[z].getAttribute("value");
+            var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("option")[gomal].getAttribute("correcto");
+            if (resp==="true") {
                 totalPoints++;
                 document.getElementById("div" + x).style.color = "green";
             }
@@ -328,10 +328,10 @@ function checkRadio(x) {
                 document.getElementById("div" + x).style.color = "red";
 
             }
-            break;
         }else {
             document.getElementById("div" + x).style.Color = "red";
         }
+        
     }
 }
 
@@ -415,7 +415,7 @@ function checkSelect(x) {
 
             var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("option")[questionSel].getAttribute("correcto");
 
-            if (resp) {
+            if (resp==="true") {
                 totalPoints++;
                 document.getElementById("div" + x).style.color = "green";
             }
