@@ -6,7 +6,7 @@
 		<option>El Club de la Lucha</option>
 		<option>Karate Kid</option>
 		<option correcto="true">Rocky</option>
-		<option></option>
+		<option>la zapatilla asesina</option>
 	</question>
 	<question>
 		<type>date</type>
